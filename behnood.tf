@@ -195,27 +195,6 @@ resource "aws_instance" "upload-image-api-instance" {
               sudo systemctl restart nginx
               EOF
 
-#   connection {
-#     type        = "ssh"
-#     user        = "ec2-user"
-#     private_key = file(var.private_key_path)
-#     host        = self.public_ip
-#   }
-
-#   provisioner "remote-exec" {
-#     inline = [
-#       "sudo apt-get update",
-#       "sudo apt-get install ca-certificates curl gnupg",
-#       "sudo mkdir -m 0755 -p /etc/apt/keyrings",
-#       "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg",
-#       "echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
-
-
-#       "sudo systemctl start docker",
-#       "sudo docker pull behnood/image-upload:latest",
-#       "sudo docker run -d -p 0.0.0.0:8000:8888 behnood/image-upload"
-#     ]
-#   }
 }
 
 # Output the public IP address of the instance
