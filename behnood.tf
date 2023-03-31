@@ -144,7 +144,7 @@ resource "aws_security_group" "upload-image-api-security-group" {
   }
 }
 
-# Launch an EC2 instance running the latest Amazon Linux 2023 AMI
+# Launch an EC2 instance
 resource "aws_instance" "upload-image-api-instance" {
   ami           = "ami-007855ac798b5175e"
   instance_type = "t2.micro"
