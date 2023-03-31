@@ -146,7 +146,7 @@ resource "aws_security_group" "upload-image-api-security-group" {
 
 # Launch an EC2 instance running the latest Amazon Linux 2023 AMI
 resource "aws_instance" "upload-image-api-instance" {
-  ami           = "ami-007855ac798b5175e" # Replace with the latest Amazon Linux 2023 AMI ID
+  ami           = "ami-007855ac798b5175e"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.image-upload-api-vpc-public_subnet.id
   associate_public_ip_address = true
